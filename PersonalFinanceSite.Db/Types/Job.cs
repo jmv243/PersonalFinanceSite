@@ -33,6 +33,7 @@ namespace PersonalFinanceSite.Db.Types
         [MaxLength(256)]
         public string Industry { get; set; }
         public int YearlySalary { get; set; }
+
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
     }

@@ -22,6 +22,7 @@ namespace PersonalFinanceSite.Db.Types
         public long LoginCounter { get; set; }
         public long SubsequentFailedAttempts { get; set; }
         public bool IsAccountLocked { get; set; }
+
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
     }
