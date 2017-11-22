@@ -54,6 +54,7 @@
     <Compile Include="ApiLogicProvider.cs" />
     <Compile Include="ExpenseLogicProvider.cs" />
     <Compile Include="Helpers\ConversionExtensions.cs" />
+    <Compile Include="Helpers\TokenGenerator.cs" />
     <Compile Include="JobLogicProvider.cs" />
     <Compile Include="AuthLogicProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

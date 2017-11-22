@@ -18,6 +18,7 @@ namespace PersonalFinanceSite.Db.Types
 
         [MaxLength(128)]
         public string Token { get; set; }
+        public DateTime ExpireDate { get; set; }
 
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }

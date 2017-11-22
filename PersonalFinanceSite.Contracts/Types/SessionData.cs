@@ -8,8 +8,9 @@ namespace PersonalFinanceSite.Contracts.Types
 {
     public class SessionData
     {
-        string Token { get; set; }
-        DateTime ExpireDate { get; set; }
-        DateTime CreatedDate { get; set; }
+        public string Token { get; set; }
+        public bool Valid { get; set; }
+        public DateTime ExpireDate { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }

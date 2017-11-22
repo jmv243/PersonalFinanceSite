@@ -23,8 +23,14 @@ namespace PersonalFinanceSite.Db
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+
         public virtual DbSet<AddressInformation> AddressInformation { get; set; }
+        public virtual DbSet<Expense> Expenses { get; set; }
+        public virtual DbSet<Job> Jobs { get; set; }
+        public virtual DbSet<LoginInformation> LoginInformation { get; set; }
+        public virtual DbSet<Session> Session { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        
     }
 
     //public class MyEntity

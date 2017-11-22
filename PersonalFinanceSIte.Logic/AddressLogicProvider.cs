@@ -19,7 +19,13 @@ namespace PersonalFinanceSIte.Logic
 
         public IAddressInformation AddAddressInformation(IAddressInformation addressInfo)
         {
-            //TODO: make sure the user doesn't already have an address saved
+            //Business Rule:  The user can only have one address for now
+            var data = db.AddressInformation.Where(x => x.UserFK == addressInfo.UserFK).FirstOrDefault();
+
+            if (data != null)
+            {
+                DeleteAddressInformation(data.AddressInformationPK);
+            }
 
             AddressInformation info = addressInfo.FromInterfaceToEntity<IAddressInformation, AddressInformation>();
             db.AddressInformation.Add(info);
@@ -39,14 +45,14 @@ namespace PersonalFinanceSIte.Logic
 
         public IAddressInformation GeAddressByPK(Guid addressPK)
         {
-            AddressInformation info = db.AddressInformation.Where(x => x.AddressInformationPK == addressPK).FirstOrDefault();
+            AddressInformation info = db.AddressInformation.Where(x => x.AddressInformationPK == addressPK).OrderByDescending(x => x.CreatedDate).FirstOrDefault();
 
             return info;
         }
 
         public IAddressInformation GetUserAddress(Guid userFK)
         {
-            AddressInformation address = db.AddressInformation.Where(x => x.UserFK == userFK).FirstOrDefault();
+            AddressInformation address = db.AddressInformation.Where(x => x.UserFK == userFK).OrderByDescending(x => x.CreatedDate).FirstOrDefault();
             return address;
         }
 
