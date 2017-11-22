@@ -23,7 +23,7 @@ namespace PersonalFinanceSite.Tests
         }
 
         [Test]
-        public void AddAddressInformation(IAddressInformation addressInfo)
+        public IAddressInformation AddAddressInformation(IAddressInformation addressInfo)
         {
             throw new NotImplementedException();
         }

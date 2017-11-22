@@ -49,6 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201711220452051_init.cs" />
+    <Compile Include="Migrations\201711220452051_init.Designer.cs">
+      <DependentUpon>201711220452051_init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Types\AddressInformation.cs" />
     <Compile Include="PersonalFinanceSiteData.cs" />
@@ -68,6 +72,11 @@
       <Project>{b9a45f26-575b-4c64-99a1-787e967fbb05}</Project>
       <Name>PersonalFinanceSite.Contracts</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711220452051_init.resx">
+      <DependentUpon>201711220452051_init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,7 +9,7 @@ namespace PersonalFinanceSite.Contracts.ApiLogicProviders
 {
     public interface IAddressLogicProvider
     {
-        void AddAddressInformation(IAddressInformation addressInfo);
+        IAddressInformation AddAddressInformation(IAddressInformation addressInfo);
         IAddressInformation GeAddressByPK(Guid addressPK);
         IAddressInformation GetUserAddress(Guid userFK);
         IAddressInformation UpdateAddressInformation(IAddressInformation addressInformation);
