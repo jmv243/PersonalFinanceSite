@@ -24,7 +24,7 @@ namespace PersonalFinanceSIte.Logic
             AddressLogicProvider = new AddressLogicProvider();
             ExpenseLogicProvider = new ExpenseLogicProvider();
             JobLogicProvider = new JobLogicProvider();
-            LoginLogicProvider = new LoginLogicProvider();
+            LoginLogicProvider = new AuthLogicProvider();
             UserLogicProvider = new UserLogicProvider();
             SignUpLogicProvider = new SignUpLogicProvider();
         }

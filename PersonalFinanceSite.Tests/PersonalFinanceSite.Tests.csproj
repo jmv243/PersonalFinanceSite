@@ -53,11 +53,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiLogicProviderTests\AddressLogicProviderTests.cs" />
+    <Compile Include="ApiLogicProviderTests\ApiLogicProviderTests.cs" />
+    <Compile Include="ApiLogicProviderTests\AuthLogicProviderTests.cs" />
+    <Compile Include="ApiLogicProviderTests\ExpenseLogicProviderTests.cs" />
+    <Compile Include="ApiLogicProviderTests\JobLogicProviderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ApiLogicProviderTests\SignUpLogicProviderTests.cs" />
+    <Compile Include="ApiLogicProviderTests\UserLogicProviderTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PersonalFinanceSite.Contracts\PersonalFinanceSite.Contracts.csproj">
+      <Project>{b9a45f26-575b-4c64-99a1-787e967fbb05}</Project>
+      <Name>PersonalFinanceSite.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersonalFinanceSite.Db\PersonalFinanceSite.Db.csproj">
+      <Project>{a66357b4-edb6-4198-93f1-fba5d252461d}</Project>
+      <Name>PersonalFinanceSite.Db</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersonalFinanceSite.Logging\PersonalFinanceSite.Logging.csproj">
+      <Project>{94b89743-9280-4691-9b60-f2b0183a073f}</Project>
+      <Name>PersonalFinanceSite.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersonalFinanceSIte.Logic\PersonalFinanceSIte.Logic.csproj">
+      <Project>{0a1f25c8-44b3-42ad-bf58-444e91b47b5e}</Project>
+      <Name>PersonalFinanceSIte.Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
