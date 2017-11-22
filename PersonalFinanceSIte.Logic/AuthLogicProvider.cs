@@ -1,11 +1,19 @@
 ﻿using System;
 using PersonalFinanceSite.Contracts.ApiLogicProviders;
 using PersonalFinanceSite.Contracts.Types;
+using PersonalFinanceSite.Db;
 
 namespace PersonalFinanceSIte.Logic
 {
     public class AuthLogicProvider : IAuthLogicProvider
     {
+        private PersonalFinanceSiteData db;
+
+        public AuthLogicProvider(PersonalFinanceSiteData db)
+        {
+            this.db = db;
+        }
+
         public SessionData Login(LoginCredentials login)
         {
             throw new NotImplementedException();

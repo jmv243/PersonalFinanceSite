@@ -2,11 +2,19 @@
 using System.Collections.Generic;
 using PersonalFinanceSite.Contracts.ApiLogicProviders;
 using PersonalFinanceSite.Contracts.DatabaseContracts;
+using PersonalFinanceSite.Db;
 
 namespace PersonalFinanceSIte.Logic
 {
     public class ExpenseLogicProvider : IExpenseLogicProvider
     {
+        private PersonalFinanceSiteData db;
+
+        public ExpenseLogicProvider(PersonalFinanceSiteData db)
+        {
+            this.db = db;
+        }
+
         public void AddExpense(IExpense expense)
         {
             throw new NotImplementedException();

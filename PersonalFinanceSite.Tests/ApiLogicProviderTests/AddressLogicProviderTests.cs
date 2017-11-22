@@ -6,13 +6,24 @@ using System.Threading.Tasks;
 using PersonalFinanceSite.Contracts.ApiLogicProviders;
 using PersonalFinanceSite.Contracts.DatabaseContracts;
 using NUnit.Framework;
+using PersonalFinanceSIte.Logic;
+using PersonalFinanceSite.Db;
 
 namespace PersonalFinanceSite.Tests
 {
     public class AddressLogicProviderTests : IAddressLogicProvider
     {
+        //system under test
+        AddressLogicProvider _provider;
+
+        public AddressLogicProviderTests()
+        {
+            PersonalFinanceSiteData db = new PersonalFinanceSiteData();
+            _provider = new AddressLogicProvider(db);
+        }
+
         [Test]
-        public void AddAddressInformation()
+        public void AddAddressInformation(IAddressInformation addressInfo)
         {
             throw new NotImplementedException();
         }

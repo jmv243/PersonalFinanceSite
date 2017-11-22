@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PersonalFinanceSite.Contracts.ApiLogicProviders;
+using PersonalFinanceSite.Db;
 
 namespace PersonalFinanceSIte.Logic
 {
@@ -21,12 +22,14 @@ namespace PersonalFinanceSIte.Logic
 
         public ApiLogicProvider()
         {
-            AddressLogicProvider = new AddressLogicProvider();
-            ExpenseLogicProvider = new ExpenseLogicProvider();
-            JobLogicProvider = new JobLogicProvider();
-            LoginLogicProvider = new AuthLogicProvider();
-            UserLogicProvider = new UserLogicProvider();
-            SignUpLogicProvider = new SignUpLogicProvider();
+            PersonalFinanceSiteData db = new PersonalFinanceSiteData();
+
+            AddressLogicProvider = new AddressLogicProvider(db);
+            ExpenseLogicProvider = new ExpenseLogicProvider(db);
+            JobLogicProvider = new JobLogicProvider(db);
+            LoginLogicProvider = new AuthLogicProvider(db);
+            UserLogicProvider = new UserLogicProvider(db);
+            SignUpLogicProvider = new SignUpLogicProvider(db);
         }
     }
 }

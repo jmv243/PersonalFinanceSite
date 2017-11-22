@@ -1,14 +1,25 @@
 ﻿using System;
 using PersonalFinanceSite.Contracts.ApiLogicProviders;
 using PersonalFinanceSite.Contracts.DatabaseContracts;
+using System.Data.Entity;
+using PersonalFinanceSite.Db;
+using PersonalFinanceSite.Db.Types;
 
 namespace PersonalFinanceSIte.Logic
 {
     public class AddressLogicProvider : IAddressLogicProvider
     {
-        public void AddAddressInformation()
+        private PersonalFinanceSiteData db;
+
+        public AddressLogicProvider(PersonalFinanceSiteData db)
         {
-            throw new NotImplementedException();
+            this.db = db;
+        }
+
+        public void AddAddressInformation(IAddressInformation addressInfo)
+        {                        
+            //db.AddressInformation.Add(addressInfo);
+            db.SaveChanges();
         }
 
         public IAddressInformation DeleteAddressInformation(Guid addressPK)
