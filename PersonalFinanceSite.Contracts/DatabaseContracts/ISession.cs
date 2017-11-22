@@ -8,6 +8,11 @@ namespace PersonalFinanceSite.Contracts.DatabaseContracts
 {
     public interface ISession
     {
+        Guid SessionPK { get; set; }
 
+        string Token { get; set; }
+
+        DateTime CreatedDate { get; set; }
+        DateTime UpdatedDate { get; set; }
     }
 }

@@ -4,18 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PersonalFinanceSite.Contracts.DatabaseContracts;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PersonalFinanceSite.Db.Types
 {
+    [Table("LoginInformation")]
     public class LoginInformation : ILoginInformation
     {
-        public Guid LoginInformationPK { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Guid UserFK { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Password { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public long LoginCounter { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public long SubsequentFailedAttempts { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool IsAccountLocked { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime CreatedDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime UpdatedDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public Guid LoginInformationPK { get; set; }
+        public Guid UserFK { get; set; }
+
+        [MaxLength(256)]
+        public string Password { get; set; }
+        public long LoginCounter { get; set; }
+        public long SubsequentFailedAttempts { get; set; }
+        public bool IsAccountLocked { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime UpdatedDate { get; set; }
     }
 }

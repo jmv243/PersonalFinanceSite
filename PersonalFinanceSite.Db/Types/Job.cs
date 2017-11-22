@@ -5,22 +5,35 @@ using System.Text;
 using System.Threading.Tasks;
 using PersonalFinanceSite.Contracts.DatabaseContracts;
 using PersonalFinanceSite.Contracts.Enums;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PersonalFinanceSite.Db.Types
 {
+    [Table("Job")]
     public class Job : IJob
     {
-        public Guid JobPK { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Guid UserFK { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string JobTitle { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public PayType PaymentType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double PayCheckAmount { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public PayFrequency PayCheckFrequency { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CompanyName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CompanyCity { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Industry { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int YearlySalary { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime CreatedDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime UpdatedDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public Guid JobPK { get; set; }
+        public Guid UserFK { get; set; }
+
+        [MaxLength(256)]
+        public string JobTitle { get; set; }
+        public PayType PaymentType { get; set; }
+        public double PayCheckAmount { get; set; }
+        public PayFrequency PayCheckFrequency { get; set; }
+
+        [MaxLength(256)]
+        public string CompanyName { get; set; }
+
+        [MaxLength(256)]
+        public string CompanyCity { get; set; }
+
+        [MaxLength(256)]
+        public string Industry { get; set; }
+        public int YearlySalary { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime UpdatedDate { get; set; }
     }
 }
